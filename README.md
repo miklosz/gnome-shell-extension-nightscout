@@ -1,13 +1,17 @@
 # Nightscout for GNOME Shell
+Forked from: [fnandot/gnome-shell-extension-nightscout](https://github.com/fnandot/gnome-shell-extension-nightscout)
+
 This extension integrates Nightscout into GNOME Shell.
-
-
 This extension is not currently done and is in beta testing.
+
+## Changes from original repo
+- added support for gnome shell 40+
+- added support for token secured instances of nightscout
 
 ## Features
 * Retrieve glucose values from Nightscout.
 * Show a notification when your glucose readings are missing.
-* High, low and missing readings notifications on your GNOME message tray.
+* igh, low and missing readings notifications on your GNOME message tray
 * Glucose is falling down and raising up notifications on your GNOME message tray.
 
 ## Missing features

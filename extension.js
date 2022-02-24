@@ -124,14 +124,11 @@ const Nightscout = new Lang.Class({
         },
 
         _checkUpdates: function () {
+            const nightscoutUrl = this.settings.get_string('url');
+            const authKey = this.settings.get_string('authkey');
+            const fullUrl = `${nightscoutUrl}/api/v1/entries.json?count=1&token=${authKey}`;
 
-            let nightscoutUrl = this.settings.get_string('nightscout');
-
-            let message = Soup.form_request_new_from_hash(
-                'GET',
-                `${nightscoutUrl}/api/v1/entries.json?count=1`,
-                {}
-            );
+            let message =  Soup.Message.new('GET',fullUrl);
 
             this.httpSession.queue_message(message, Lang.bind(this,
                 function (_httpSession, message) {
